@@ -86,6 +86,9 @@ header {
   color: var(--Nav-Items-Colour);
   background-color: #0077cc;
 }
+.cst-NavContactButton:hover {
+  color: var(--Nav-Items-Colour);
+}
 /*- -------------------------------------------------- -*/
 
 /*- Footer -*/

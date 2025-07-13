@@ -5,7 +5,7 @@ import DB from "./Database/SCHEMA.js"
 
 const URL = "127.0.0.1";
 const PORT = 3030;
-const VERSION = "v1.1:0"
+const VERSION = "v1.2:0"
 
 LOG.INFO ({ SERVER : "TANISHA DEBIAN SERVER (IN)", PROJECT : "ANTARDRISTI", AUTHOR : "ALAKSHENDRA SINGH", VERSION : VERSION });
 LOG.SYSTEM ({ MESSAGE : "SERVER STARTING", URL : URL, PORT : PORT });
@@ -202,10 +202,10 @@ App.get ('/Toss', async function ( Request , Response ) {
     DynamicKey = 0xFFFF & (DynamicKey ^ (DynamicKey << 7));
 
   if (DynamicKey >= 0x7FFF) {
-    var COIN = "/Resources/Heads.PNG";
+    var COIN = "/Resources/Heads.png";
     var TOSS = "HEADS";
   } else {
-    var COIN = "/Resources/Tails.PNG";
+    var COIN = "/Resources/Tails.png";
     var TOSS = "TAILS";
   }
 
