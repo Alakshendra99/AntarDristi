@@ -1,0 +1,234 @@
+:root {
+  --Background-Colour: #FFFFFF;
+  --Font-Colour: #333333;
+  --Section-Colour: #FEFEFE;
+  --Background-Colour-Group1: #FEFEFE;
+  --Font-Colour-Title-Group1: #333333;
+  --Font-Colour-Content-Group1: #333333;
+  --Background-Colour-Group2: #B3D8A8;
+  --Font-Colour-Title-Group2: #333333;
+  --Font-Colour-Content-Group2: #333333;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--Background-Colour);
+}
+/*- -------------------------------------------------- -*/
+
+
+/*- Contact Container -*/
+/*- -------------------------------------------------- -*/
+#id-Contact {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: var(--Background-Colour-Group1);
+}
+.cst-ContactContainer {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cst-ContactTitle {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  padding-top: 7vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  color: var(--Font-Colour);
+}
+@media (max-width: 768px) {
+  .cst-ContactTitle {
+    font-size: 3rem !important;
+  }
+}
+/*- -------------------------------------------------- -*/
+
+
+/*- Contact Page Details -*/
+/*- -------------------------------------------------- -*/
+.cst-ContactDetailsContainer {
+  padding: 7vh 10vw;
+  margin: 0;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .cst-ContactDetailsContainer {
+    padding: 5vh 5vw !important;
+  }
+}
+.cst-DetailBlock {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.cst-DetailRow {
+  padding: 3vh 0;
+  margin: 0;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+}
+.cst-DetailBox {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  text-align: right;
+  align-items: center;
+  padding-right: 1vw;
+}
+.cst-DetailImage {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 3.5vw;
+  height: 3.5vw;
+}
+.cst-DetailText {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  padding-left: 1vw;
+  text-align: left;
+  align-items: center;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--Font-Colour);
+}
+@media (max-width: 768px) {
+  .cst-DetailBox {
+    padding: 0 auto !important;
+  }
+  .cst-DetailImage {
+    width: 10vw !important;
+    height: 10vw !important;
+  }
+  .cst-DetailText {
+    font-size: 0.9rem !important;
+  }
+}
+/*- -------------------------------------------------- -*/
+
+
+/*- Contact Page Form -*/
+/*- -------------------------------------------------- -*/
+.cst-FormContainer {
+  padding: 2vh 0;
+  padding-left: 2vw;
+  margin: 0;
+  border: 0;
+}
+@media (max-width: 768px) {
+  .cst-FormContainer {
+    padding: 2vh 10vw !important;
+    padding-top: 5vh !important;
+  }
+}
+.cst-FormItem {
+  padding: 1vh 0;
+  margin: 0;
+  border: 0;
+}
+@media (max-width: 768px) {
+  .cst-FormItem {
+    padding: 1.5vh 0 !important;
+  }
+}
+.cst-FormLabel {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--Font-Colour-Content-Group1);
+}
+.cst-FormNecessary {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: #EA0000;
+}
+/*- -------------------------------------------------- -*/
+
+
+/*- Contact Page Newsletter -*/
+/*- -------------------------------------------------- -*/
+#id-Newletter {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: var(--Background-Colour-Group2);
+}
+.cst-NewsTitle {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-top: 3vh;
+  color: var(--Font-Colour-Title-Group2);
+}
+.cst-NewsSubTitle {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-align: center;
+  padding-top: 1vh;
+  color: var(--Font-Colour-Content-Group2);
+}
+.cst-NewsFormContainer {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  padding-top: 1.5vh;
+  padding-bottom: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cst-NewsInput {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  margin: 0 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cst-NewsButton {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  margin: 0 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .cst-NewsInput {
+    padding: 0 5vw !important;
+    margin: 0;
+  }
+  .cst-NewsButton {
+    margin: 0 !important;
+    padding-top: 1vh;
+  }
+}

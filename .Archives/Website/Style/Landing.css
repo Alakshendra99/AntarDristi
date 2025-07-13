@@ -1,0 +1,260 @@
+:root {
+  --Background-Colour: #FFFFFF;
+  --Font-Colour: #FFFFFF;
+  --Section-Colour: #FEFEFE;
+  --Background-Colour-Group1: #FEFEFE;
+  --Font-Colour-Title-Group1: #294726;
+  --Font-Colour-Content-Group1: #60813A;
+  --Background-Colour-Group2: #33343B;
+  --Font-Colour-Title-Group2: #F1F0EE;
+  --Font-Colour-Content-Group2: #F1F0EE;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--Background-Colour);
+}
+/*- -------------------------------------------------- -*/
+
+
+/*- Landing Page -*/
+/*- -------------------------------------------------- -*/
+#id-Landing {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.cst-LandBackground {
+  background-image: url('../Resources/Image002HawaMahal.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .cst-LandBackground {
+    height: 95vh !important;
+  }
+}
+
+.cst-LandOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background: rgba(0, 0, 0, 0.6);
+  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.cst-LandText {
+  color: var(--Font-Colour);
+  text-align: center;
+  padding-top: 10vh;
+}
+@media (max-width: 768px) {
+  .cst-LandText {
+    color: var(--Font-Colour);
+    text-align: center;
+    padding-top: 15vh;
+  }
+}
+
+.cst-LandWelcome {
+  color: var(--Font-Colour);
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+.cst-LandName {
+  color: var(--Font-Colour);
+  text-align: center;
+  padding-top: 0.75vh;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.cst-LandCaption {
+  color: var(--Font-Colour);
+  text-align: center;
+  padding-top: 0.5vh;
+  font-size: 1rem;
+  font-weight: 400;
+}
+/*- -------------------------------------------------- -*/
+
+
+/*- Who I Am ? -*/
+/*- -------------------------------------------------- -*/
+#id-Who {
+  background-color: var(--Background-Colour-Group1);
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.cst-WhoContainer {
+  background-color: var(--Background-Colour-Group1);
+  padding: 5vh 5vw;
+  margin: 0;
+  border: 0;
+}
+
+.cst-WhoTextContainer {
+  background-color: var(--Background-Colour-Group1);
+  padding: 2vh 0vw;
+  margin: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cst-WhoTextBlock {
+  align-items: center;
+  text-align: left;
+}
+.cst-WhoTitle {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-weight: 600;
+  color: var(--Font-Colour-Title-Group1);
+}
+.cst-WhoParagraph {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-weight: 500;
+  color: var(--Font-Colour-Content-Group1);
+}
+
+.cst-WhoImageContainer {
+  background-color: var(--Background-Colour-Group1);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cst-WhoImageMask {
+  width: 25vw;
+  height: 25vw;
+  border-radius: 50%;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+}
+.cst-WhoImage {
+  width: 25vw;
+  height: 25vw;
+  object-fit: cover;
+  align-items: center;
+  text-align: center;
+  display: inline-block;
+}
+@media (max-width: 768px) {
+  .cst-WhoImageMask {
+    width: 60vw !important;
+    height: 60vw !important;
+  }
+  .cst-WhoImage {
+    width: 60vw !important;
+    height: 60vw !important;
+  }
+}
+/*- -------------------------------------------------- -*/
+
+
+/*- Explore -*/
+/*- -------------------------------------------------- -*/
+#id-Explorer {
+  background-color: var(--Background-Colour-Group2);
+  padding: 3vh 0;
+  margin: 0;
+  border: 0;
+}
+
+.cst-ExplorerContainer {
+  background-color: var(--Background-Colour-Group2);
+  padding: 2vh 0;
+  margin: 0;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cst-ExplorerTitle {
+  background-color: var(--Background-Colour-Group2);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+  color: var(--Font-Colour-Title-Group2);
+}
+
+.cst-ExplorerImageGallery {
+  background-color: var(--Background-Colour-Group2);
+  padding: 2vh 10vw;
+  margin: 0;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cst-ExplorerImageBoard {
+  padding: 2vh 0;
+  margin: 0;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cst-ExplorerImageMask {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  display: block;
+  border: 3px solid var(--Font-Colour-Title-Group2);
+}
+.cst-ExplorerImage {
+  width: 15vw;
+  height: 15vw;
+  object-fit: cover;
+  align-items: center;
+  text-align: center;
+  display: block;
+}
+@media (max-width: 768px) {
+  .cst-ExplorerImageMask {
+    width: 60vw;
+    height: 60vw;
+  }
+  .cst-ExplorerImage {
+    width: 60vw;
+    height: 60vw;
+  }
+}
+.cst-ExplorerImageCation {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  padding-top: 2vh;
+  font-weight: 600;
+  color: var(--Font-Colour-Content-Group2);
+  text-align: center;
+  display: block;
+}

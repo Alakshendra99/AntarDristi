@@ -1,0 +1,91 @@
+:root {
+  --Background-Colour: #FFFFFF;
+  --Font-Colour: #333333;
+  --Section-Colour: #FEFEFE;
+  --Background-Colour-Group1: #FEFEFE;
+  --Font-Colour-Title-Group1: #333333;
+  --Font-Colour-Content-Group1: #333333;
+  --Background-Colour-Group2: #B3D8A8;
+  --Font-Colour-Title-Group2: #333333;
+  --Font-Colour-Content-Group2: #333333;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--Background-Colour);
+}
+/*- -------------------------------------------------- -*/
+
+
+/*- Landing Page -*/
+/*- -------------------------------------------------- -*/
+#id-FamilyInfo {
+  padding: 5vh 10vw; 
+  border: 0;
+  margin: 0;
+  background-color: var(--Background-Colour-Group1);
+}
+.cst-FamilyMeetMe {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  text-align: center;
+}
+.cst-FamilyDescription {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  padding-top: 2vh;
+  text-align: left;
+}
+
+.cst-FamilyInfoContainer {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7vh;
+}
+.cst-FamilyImageBox {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cst-FamilyImage {
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+}
+.cst-FamilyInfoBox {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  align-items: center;
+  text-align: center;
+}
+.cst-FamilyTitle {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  text-align: left;
+  color: var(--Font-Colour-Title-Group1);
+}
+.cst-FamilyInfo {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  padding-top: 2vh;
+  text-align: left;
+  color: var(--Font-Colour-Content-Group1);
+}

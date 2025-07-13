@@ -1,0 +1,22 @@
+{
+  "name": "antardristi",
+  "version": "1.0.0",
+  "description": "Alakshendra Singh's Website",
+  "main": "SERVER.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Alakshendra",
+    "Singh"
+  ],
+  "author": "Alakshendra Singh",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.3"
+  }
+}
