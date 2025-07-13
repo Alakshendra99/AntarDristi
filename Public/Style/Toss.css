@@ -1,0 +1,55 @@
+:root {
+  --Background-Colour: #FFFFFF;
+  --Font-Colour: #FFFFFF;
+  --Section-Colour: #FEFEFE;
+  --Background-Colour-Group1: #FEFEFE;
+  --Font-Colour-Title-Group1: #333333;
+  --Font-Colour-Content-Group1: #60813A;
+  --Background-Colour-Group2: #393E46;
+  --Font-Colour-Title-Group2: #F1F0EE;
+  --Font-Colour-Content-Group2: #F1F0EE;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--Background-Colour);
+}
+/*- -------------------------------------------------- -*/
+
+
+/*- Toss -*/
+/*- -------------------------------------------------- -*/
+.cst-TossContainer {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 5vh 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cst-TossCoin {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cst-TossCoinImage {
+  height: 40vh;
+  width: 40vh;
+}
+.cst-TossResult {
+  padding: 1vh 0;
+  border: 0;
+  margin: 0;
+  color: var(--Font-Colour-Title-Group1);
+  font-weight: bold;
+  font-size: 2rem;
+}
+

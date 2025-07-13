@@ -26,9 +26,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
   <link rel="stylesheet" href="/Style/Common.css"/>
-  <link rel="stylesheet" href="/Style/Landing.css"/>
+  <link rel="stylesheet" href="/Style/Toss.css"/>
 
-  <title>Alakshendra Singh</title>
+  <title>Toss</title>
   <!-- Internal CSS -->
   <style></style>
 </head>
@@ -40,15 +40,15 @@
   <div class="animate__animated animate__fadeInDown">
     <nav class="navbar navbar-expand-lg cst-NavBar">
       <div class="container-fluid">
-        <a class="navbar-brand cst-NavBrand" style="pointer-events: none;" href="/">Alakshendra Singh</a>
+        <a class="navbar-brand cst-NavBrand" href="/">Alakshendra Singh</a>
         <button class="navbar-toggler cst-NavBarButton" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarItemContainer" aria-expanded="false">
           <span class="navbar-toggler-icon cst-NavBarButtonIcon"></span>
         </button>
         <div class="collapse navbar-collapse" id="NavbarItemContainer">
           <div class="navbar-nav ms-lg-auto text-start">
-            <a class="nav-link cst-NavItems cst-Itemsactive" href="/">Home</a>
-            <a class="nav-link cst-NavItems cst-ItemsDisabled" href="/Life">Life</a>
-            <a class="nav-link cst-NavItems cst-ItemsDisabled" href="/Builds">Builds</a>
+            <a class="nav-link cst-NavItems" href="/">Home</a>
+            <a class="nav-link cst-NavItems" href="/Life">Life</a>
+            <a class="nav-link cst-NavItems" href="/Builds">Builds</a>
             <a class="nav-link cst-NavItems" href="/Family">Family</a>
             <a class="nav-link cst-NavItems cst-NavContactButton hvr-grow" href="/Contact">Contact Me</a>
           </div>
@@ -60,65 +60,15 @@
 </header>
 <main>
 
-  <section id="id-Landing">
-    <div class="cst-LandBackground">
-      <div class="cst-LandOverlay">
-        <div class="animate__animated animate__fadeInUp cst-LandText">
-          <h1 class="cst-LandWelcome">Welcome To My World!</h1>
-          <h2 class="cst-LandName">Alakshendra Singh</h2>
-          <h3 class="cst-LandCaption">Innovator Researcher Explorer</h3>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="id-Who">
-    <div class="row cst-WhoContainer">
-      <div class="col-md-8 cst-WhoTextContainer">
-        <div class="cst-WhoTextBlock">
-          <h2 class="cst-WhoTitle">Who I Am ?</h2>
-          <p class="cst-WhoParagraph"><br>So far, I'm a Curious Techie who loves tinkering with Complex Systems. I work mainly with Embedded Systems and Low-Level programming, especially in C and C++ often using some powerful GNU GCC extensions when things need to get a little more serious. Also, I build my own Embedded Hardware. I love to know how 0s and 1s are driving this world. While having interest in digital systems, I admir the Analog Nature of the World.<br><br>Thanks to my strong C/C++ background, picking up tools like JavaScript, MATLAB, and Linux comes pretty naturally. I enjoy working across the stack, whether it's writing tight, efficient code for Microcontrollers or spinning up a Self-Hosted Server (like the one this website is running on). I love Mathematics, and for my work I think Mathematics loves me.<br><br>I've done my Bachelor in Technology in Electrical & Eletronics Engineering from Birla Institute of Technology, Mesra in 2023.</p>
-        </div>
-      </div>
-      <div class="col-md-4 cst-WhoImageContainer">
-        <div class="cst-WhoImageMask">
-          <img class="cst-WhoImage" src="/Resources/MeInTeaGarder.jpeg" alt="Profile Photo">
-        </div>
-      </div>
-    </div>
-  </section>
+<div style="width: 100%; height: 80vh; padding-left: 2.5vw; padding-top: 5vh;">
+  <div class="cst-TossContainer">
+    <div class="cst-TossCoin"><img class="cst-TossCoinImage" src="<%- Coin %>"></div>
+    <div class="cst-TossResult"><%- Toss %></div>
+    <a href="/Toss"><button class="btn btn-dark">TOSS AGAIN</button></a>
+  </div>
+</div>
 
-  <section id="id-Explorer">
-    <div class="row cst-ExplorerContainer">
-      <h2 class="col cst-ExplorerTitle">Explore My World</h2>
-    </div>
-    <div class="row cst-ExplorerImageGallery">
-      <div class="col-md-4 cst-ExplorerImageBoard">
-        <div class="cst-ExplorerImageMask">
-          <a href="/Builds">
-            <img class="hvr-grow cst-ExplorerImage" src="/Resources/MeWorking.png" alt="Builds Photo">
-          </a>
-        </div>
-        <h4 class="cst-ExplorerImageCation">Builds</h4>
-      </div>
-      <div class="col-md-4 cst-ExplorerImageBoard">
-          <div class="cst-ExplorerImageMask">
-            <a href="/Life">
-              <img class="hvr-grow cst-ExplorerImage" src="/Resources/MeOnElephant.png" alt="Life Photo">
-            </a>
-          </div>
-          <h4 class="cst-ExplorerImageCation">Life</h4>
-      </div>
-      <div class="col-md-4 cst-ExplorerImageBoard">
-          <div class="cst-ExplorerImageMask">
-            <a href="/Family">
-              <img class="hvr-grow cst-ExplorerImage" src="/Resources/Family.PNG" alt="Family Photo">
-            </a>
-          </div>
-          <h4 class="cst-ExplorerImageCation">Family</h4>
-      </div>
-    </div>
-  </section>
 
 </main>
 <footer>

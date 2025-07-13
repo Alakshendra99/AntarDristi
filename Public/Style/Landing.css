@@ -5,7 +5,7 @@
   --Background-Colour-Group1: #FEFEFE;
   --Font-Colour-Title-Group1: #294726;
   --Font-Colour-Content-Group1: #60813A;
-  --Background-Colour-Group2: #33343B;
+  --Background-Colour-Group2: #393E46;
   --Font-Colour-Title-Group2: #F1F0EE;
   --Font-Colour-Content-Group2: #F1F0EE;
 }
@@ -28,7 +28,7 @@ body, html {
   border: 0;
 }
 .cst-LandBackground {
-  background-image: url('../Resources/Image002HawaMahal.png');
+  background-image: url('../Resources/ColourfulIndia.png');
   background-size: cover;
   background-position: center;
   height: 100vh;

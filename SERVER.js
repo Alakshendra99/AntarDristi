@@ -4,8 +4,8 @@ import LOG from "./Handlers/LOGGER.js";
 import DB from "./Database/SCHEMA.js"
 
 const URL = "127.0.0.1";
-const PORT = 3000;
-const VERSION = "v1.0:3"
+const PORT = 3030;
+const VERSION = "v1.1:0"
 
 LOG.INFO ({ SERVER : "TANISHA DEBIAN SERVER (IN)", PROJECT : "ANTARDRISTI", AUTHOR : "ALAKSHENDRA SINGH", VERSION : VERSION });
 LOG.SYSTEM ({ MESSAGE : "SERVER STARTING", URL : URL, PORT : PORT });
@@ -182,6 +182,37 @@ App.post ('/Newsletter', async function ( Request , Response ) {
   return Response.render('Message', {
     Title : `Success`,
     Message : `<h1>THANK YOU FOR NEWSLETTER SUBSCRIPTION</h1><h3>YOU ARE WON'T MISS MY UPDATES</h3><h4>LETS GO BACK</h4><a href="/"><button class="btn btn-dark">Home</button></a>`,
+  });
+});
+/*- --------------------------------------------------------------------------------------------------- -*/
+let DynamicKey = 54321;
+App.get ('/Toss', async function ( Request , Response ) {
+  const IP = Request.ip;
+  const Now = new Date();
+  const MS = Now.getMilliseconds();
+
+  var COIN = "/Resources/Heads.PNG";
+  var TOSS = "HEADS";
+  const StaticKey = 12345;
+
+  DynamicKey = 0x5C3A & DynamicKey;
+  DynamicKey = 0xFFFF & (StaticKey ^ MS);
+    DynamicKey = 0xFFFF & (DynamicKey ^ (DynamicKey << 3));
+    DynamicKey = 0xFFFF & (DynamicKey ^ (DynamicKey >> 5));
+    DynamicKey = 0xFFFF & (DynamicKey ^ (DynamicKey << 7));
+
+  if (DynamicKey >= 0x7FFF) {
+    var COIN = "/Resources/Heads.PNG";
+    var TOSS = "HEADS";
+  } else {
+    var COIN = "/Resources/Tails.PNG";
+    var TOSS = "TAILS";
+  }
+
+  LOG.TRACE ({ IP : IP, PATH : "POST ./Toss", TOSS : TOSS, VALUE : DynamicKey });
+  return Response.render('Toss', {
+    Toss : TOSS,
+    Coin : COIN,
   });
 });
 /*- ==================================================================================================== -*/

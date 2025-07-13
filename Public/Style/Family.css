@@ -89,3 +89,11 @@ body, html {
   text-align: left;
   color: var(--Font-Colour-Content-Group1);
 }
+
+.cst-FamilyLifeLink,
+.cst-FamilyLifeLink:link,
+.cst-FamilyLifeLink:active,
+.cst-FamilyLifeLink:visited {
+  font-weight: bold;
+  color: var(--Font-Colour-Content-Group1);
+}
