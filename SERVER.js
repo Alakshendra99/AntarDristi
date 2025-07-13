@@ -22,6 +22,7 @@ await MongoDB.Events();
 const App = Express();
 App.set ('views', './Views');
 App.set ( 'view engine', 'ejs' );
+App.set ('trust proxy', true);
 App.use ( Express.static('Public') );
 App.use ( Express.json () );
 App.use ( Express.urlencoded ({ extended: true }) );
@@ -38,23 +39,83 @@ App.use ( async function ( Request, Response, next ) {
   Response.setHeader('Connection', 'close');
   next();
 });
-App.disable('x-powered-by');
-App.disable('etag');
+App.disable ('x-powered-by');
+App.disable ('etag');
 /*- ==================================================================================================== -*/
 
 
+/*- SERVER ROUTES -*/
+/*- ==================================================================================================== -*/
+App.get ('/', async function ( Request , Response ) {
+  const IP = Request.ip;
+  const UTC = new Date();
+  const TimeIST = new Date(UTC.getTime() + (330) * 60000);
+  const IST = TimeIST.toISOString().replace('T', ' ').substring(0, 19);
+  const TIME =  `[IST ${IST}]`;
+
+  LOG.TRACE ({ TIME : TIME, IP : IP, PATH : "./" });
+  Response.render('Landing');
+});
+
+App.get ('/Contact', async function ( Request , Response ) {
+  const IP = Request.ip;
+  const UTC = new Date();
+  const TimeIST = new Date(UTC.getTime() + (330) * 60000);
+  const IST = TimeIST.toISOString().replace('T', ' ').substring(0, 19);
+  const TIME =  `[IST ${IST}]`;
+
+  LOG.TRACE ({ TIME : TIME, IP : IP, PATH : "./Contact" });
+  Response.render('Contact');
+});
+
+App.get ('/Builds', async function ( Request , Response ) {
+  const IP = Request.ip;
+  const UTC = new Date();
+  const TimeIST = new Date(UTC.getTime() + (330) * 60000);
+  const IST = TimeIST.toISOString().replace('T', ' ').substring(0, 19);
+  const TIME =  `[IST ${IST}]`;
+
+  LOG.TRACE ({ TIME : TIME, IP : IP, PATH : "./Builds" });
+  Response.render('Builds');
+});
+
+App.get ('/Family', async function ( Request , Response ) {
+  const IP = Request.ip;
+  const UTC = new Date();
+  const TimeIST = new Date(UTC.getTime() + (330) * 60000);
+  const IST = TimeIST.toISOString().replace('T', ' ').substring(0, 19);
+  const TIME =  `[IST ${IST}]`;
+
+  LOG.TRACE ({ TIME : TIME, IP : IP, PATH : "./Family" });
+  Response.render('Family');
+});
+
+App.get ('/Life', async function ( Request , Response ) {
+  const IP = Request.ip;
+  const UTC = new Date();
+  const TimeIST = new Date(UTC.getTime() + (330) * 60000);
+  const IST = TimeIST.toISOString().replace('T', ' ').substring(0, 19);
+  const TIME =  `[IST ${IST}]`;
+
+  LOG.TRACE ({ TIME : TIME, IP : IP, PATH : "./Life" });
+  Response.render('Life');
+});
+/*- ==================================================================================================== -*/
 
 
+/*- SERVER ERROR -*/
+/*- ==================================================================================================== -*/
+App.use ( async function ( Request , Response ) {
+  const IP = Request.ip;
+  const UTC = new Date();
+  const TimeIST = new Date(UTC.getTime() + (330) * 60000);
+  const IST = TimeIST.toISOString().replace('T', ' ').substring(0, 19);
+  const TIME =  `[IST ${IST}]`;
 
-
-
-
-
-
-
-
-
-
+  LOG.SECURITY ({ TIME : TIME, IP : IP, PATH : Request.originalUrl });
+  Response.status(404).send('404 - Page Not Found');
+});
+/*- ==================================================================================================== -*/
 
 
 /*- SERVER LISTENING -*/

@@ -4,9 +4,6 @@
 # Node JS
 node_modules/
 .npm
-.env
-.env.local
-.env.*.local
 
 # Misc
 .Archives/
