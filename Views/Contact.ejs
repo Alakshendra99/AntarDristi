@@ -26,9 +26,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
   <link rel="stylesheet" href="/Style/Common.css"/>
-  <link rel="stylesheet" href="/Style/Landing.css"/>
+  <link rel="stylesheet" href="/Style/Contact.css"/>
 
-  <title>Alakshendra Singh</title>
+  <title>Contact Me</title>
   <!-- Internal CSS -->
   <style></style>
 </head>
@@ -40,17 +40,17 @@
   <div class="animate__animated animate__fadeInDown">
     <nav class="navbar navbar-expand-lg cst-NavBar">
       <div class="container-fluid">
-        <a class="navbar-brand cst-NavBrand" style="pointer-events: none;" href="/">Alakshendra Singh</a>
+        <a class="navbar-brand cst-NavBrand" href="/">Alakshendra Singh</a>
         <button class="navbar-toggler cst-NavBarButton" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarItemContainer" aria-expanded="false">
           <span class="navbar-toggler-icon cst-NavBarButtonIcon"></span>
         </button>
         <div class="collapse navbar-collapse" id="NavbarItemContainer">
           <div class="navbar-nav ms-lg-auto text-start">
-            <a class="nav-link cst-NavItems cst-Itemsactive" href="/">Home</a>
-            <a class="nav-link cst-NavItems cst-ItemsDisabled" href="/Life">Life</a>
-            <a class="nav-link cst-NavItems cst-ItemsDisabled" href="/Builds">Builds</a>
+            <a class="nav-link cst-NavItems" href="/">Home</a>
+            <a class="nav-link cst-NavItems" href="/Life">Life</a>
+            <a class="nav-link cst-NavItems" href="/Builds">Builds</a>
             <a class="nav-link cst-NavItems" href="/Family">Family</a>
-            <a class="nav-link cst-NavItems cst-NavContactButton hvr-grow" href="/Contact">Contact Me</a>
+            <a class="nav-link cst-NavItems cst-NavContactButton hvr-grow" style="pointer-events: none;" href="/Contact">Contact Me</a>
           </div>
         </div>
       </div>
@@ -60,64 +60,75 @@
 </header>
 <main>
 
-  <section id="id-Landing">
-    <div class="cst-LandBackground">
-      <div class="cst-LandOverlay">
-        <div class="animate__animated animate__fadeInUp cst-LandText">
-          <h1 class="cst-LandWelcome">Welcome To My World!</h1>
-          <h2 class="cst-LandName">Alakshendra Singh</h2>
-          <h3 class="cst-LandCaption">Innovator Researcher Explorer</h3>
-        </div>
+  <section id="id-Contact">
+    <div class="cst-ContactContainer">
+      <h1 class="cst-ContactTitle">Contact Me</h1>
+    </div>
+
+    <div class="row cst-ContactDetailsContainer">
+
+      <div class="col-md-6 cst-DetailBlock">
+          <div class="row cst-DetailRow">
+            <div class="col-2 cst-DetailBox">
+              <img class="cst-DetailImage" src="/Resources/Icon1.svg">
+            </div>
+            <div class="col-10 cst-DetailText">Bihar, India, Asia, Earth, Milky Way Galaxy, Universe</div>
+          </div>
+          <div class="row cst-DetailRow">
+            <div class="col-2 cst-DetailBox">
+              <img class="cst-DetailImage" src="/Resources/Icon2.svg">
+            </div>
+            <div class="col-10 cst-DetailText">+91 94628 30413</div>
+          </div>
+          <div class="row cst-DetailRow">
+            <div class="col-2 cst-DetailBox">
+              <img class="cst-DetailImage" src="/Resources/Icon3.svg">
+            </div>
+            <div class="col-10 cst-DetailText">alakshendra.singh@outlook.in<br>me@alakshendra.com</div>
+          </div>
       </div>
+
+      <div class="col-md-6 cst-FormContainer">
+        <form id="FormContact" action="/Contact" method="POST">
+          <div class="cst-FormItem"><%- ContactString %></div>
+          <div class="cst-FormItem">
+            <label for="ContactFormEmail" class="cst-FormLabel">Email Address<span class="cst-FormNecessary">*</span></label>
+            <input id="ContactFormEmail" class="form-control FormItem" type="email" placeholder="name@example.com" name="Email" required>
+          </div>
+          <div class="cst-FormItem">
+            <label for="ContactFormName" class="cst-FormLabel">Full Name<span class="cst-FormNecessary">*</span></label>
+            <input id="ContactFormName" class="form-control FormItem" type="text" placeholder="Full Name" name="Name" required>
+          </div>
+          <div class="cst-FormItem">
+            <label for="ContactFormMobile" class="cst-FormLabel">Mobile Number</label>
+            <input id="ContactFormMobile" class="form-control FormItem" type="text" placeholder="+91 XXXXX XXXXX" name="Mobile">
+          </div>
+          <div class="cst-FormItem">
+            <label for="ContactFormContent" class="cst-FormLabel">Questions or Suggestions<span class="cst-FormNecessary">*</span></label>
+            <textarea id="ContactFormContent" class="form-control FormItem" placeholder="Questions or Suggestions" rows="3" name="Message" required></textarea>
+          </div>
+          <div id="FormSend" class="cst-FormItem">
+            <button id="ContactFormSend" class="btn btn-outline-dark">Send</button>
+          </div>
+        </form>
+      </div>
+
     </div>
   </section>
 
-  <section id="id-Who">
-    <div class="row cst-WhoContainer">
-      <div class="col-md-8 cst-WhoTextContainer">
-        <div class="cst-WhoTextBlock">
-          <h2 class="cst-WhoTitle">Who I Am ?</h2>
-          <p class="cst-WhoParagraph"><br>So far, I'm a Curious Techie who loves tinkering with Complex Systems. I work mainly with Embedded Systems and Low-Level programming, especially in C and C++ often using some powerful GNU GCC extensions when things need to get a little more serious. Also, I build my own Embedded Hardware. I love to know how 0s and 1s are driving this world. While having interest in digital systems, I admir the Analog Nature of the World.<br><br>Thanks to my strong C/C++ background, picking up tools like JavaScript, MATLAB, and Linux comes pretty naturally. I enjoy working across the stack, whether it's writing tight, efficient code for Microcontrollers or spinning up a Self-Hosted Server (like the one this website is running on). I love Mathematics, and for my work I think Mathematics loves me.<br><br>I've done my Bachelor in Technology in Electrical & Eletronics Engineering from Birla Institute of Technology, Mesra in 2023.</p>
+  <section id="id-Newletter">
+    <h2 class="cst-NewsTitle">Subscribe To Our Newsletter</h2>
+    <h4 class="cst-NewsSubTitle">Subscribe To Our Email Newsletter Updates to Stay Tuned With The News of Our Latest Endeavour.</h4>
+    <form id="ProductContact" action="/Newsletter" method="POST">
+      <div class="row cst-NewsFormContainer">
+        <div class="col-md-6 cst-NewsInput">
+          <input id="NewsletterFormEmail" class="form-control FormItem" type="email" placeholder="name@example.com" name="Email" required>
+        </div>
+        <div class="col-md-auto cst-NewsButton">
+          <button id="SubscribeFormSend" class="btn btn-dark">Subscribe</button>
         </div>
       </div>
-      <div class="col-md-4 cst-WhoImageContainer">
-        <div class="cst-WhoImageMask">
-          <img class="cst-WhoImage" src="/Resources/MeInTeaGarder.jpeg" alt="Profile Photo">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="id-Explorer">
-    <div class="row cst-ExplorerContainer">
-      <h2 class="col cst-ExplorerTitle">Explore My World</h2>
-    </div>
-    <div class="row cst-ExplorerImageGallery">
-      <div class="col-md-4 cst-ExplorerImageBoard">
-        <div class="cst-ExplorerImageMask">
-          <a href="/Builds">
-            <img class="hvr-grow cst-ExplorerImage" src="/Resources/Workzone.png" alt="Builds Photo">
-          </a>
-        </div>
-        <h4 class="cst-ExplorerImageCation">Builds</h4>
-      </div>
-      <div class="col-md-4 cst-ExplorerImageBoard">
-          <div class="cst-ExplorerImageMask">
-            <a href="/Life">
-              <img class="hvr-grow cst-ExplorerImage" src="/Resources/MeOnElephant.png" alt="Life Photo">
-            </a>
-          </div>
-          <h4 class="cst-ExplorerImageCation">Life</h4>
-      </div>
-      <div class="col-md-4 cst-ExplorerImageBoard">
-          <div class="cst-ExplorerImageMask">
-            <a href="/Family">
-              <img class="hvr-grow cst-ExplorerImage" src="/Resources/Family.PNG" alt="Family Photo">
-            </a>
-          </div>
-          <h4 class="cst-ExplorerImageCation">Family</h4>
-      </div>
-    </div>
+    </form>
   </section>
 
 </main>

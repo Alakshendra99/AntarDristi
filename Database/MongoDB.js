@@ -1,9 +1,6 @@
 import LOG from "../Handlers/LOGGER.js";
 import Mongoose from "mongoose";
-const DB = {
-  NAME : "AgniDB",
-  PORT : 27017,
-};
+import DB from "./SCHEMA.js"
 /*- ==================================================================================================== -*/
 
 
