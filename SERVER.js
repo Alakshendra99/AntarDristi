@@ -5,7 +5,7 @@ import DB from "./Database/SCHEMA.js"
 
 const URL = "127.0.0.1";
 const PORT = 3000;
-const VERSION = "v1.0:2"
+const VERSION = "v1.0:3"
 
 LOG.INFO ({ SERVER : "TANISHA DEBIAN SERVER (IN)", PROJECT : "ANTARDRISTI", AUTHOR : "ALAKSHENDRA SINGH", VERSION : VERSION });
 LOG.SYSTEM ({ MESSAGE : "SERVER STARTING", URL : URL, PORT : PORT });
@@ -69,11 +69,35 @@ App.get ('/Life', async function ( Request , Response ) {
 });
 /*- --------------------------------------------------------------------------------------------------- -*/
 App.get ('/Contact', async function ( Request , Response ) {
-  const IP = Request.ip;
-  LOG.TRACE ({ IP : IP, PATH : "GET ./Contact" });
-  Response.render('Contact', {
-    ContactString : `<p class="cst-FormLabel cst-FormNecessary" style="visibility: hidden;">Issue Place Holder.</p>`,
-  });
+  const STATUS = Request.query.STATUS;
+  if ( !STATUS ) {
+    const IP = Request.ip;
+    LOG.TRACE ({ IP : IP, PATH : "GET ./Contact" });
+    return Response.render('Contact', {
+      ContactString : `<p class="cst-FormLabel cst-FormNecessary" style="visibility: hidden;">Issue Place Holder.</p>`,
+    });
+  } 
+  else {
+    if ( STATUS === "EMAIL" ) {
+      LOG.AUDIT ({ ERROR : "ERR-USR:01", MESSAGE : "INVALID EMAIL", PATH : "POST ./Contact" });
+      return Response.render('Contact', {
+        ContactString : `<p class="cst-FormLabel cst-FormNecessary">E-Mail Format is Invalid</p>`,
+      });
+    }
+    else if ( STATUS === "MOBILE" ) {
+      LOG.AUDIT ({ ERROR : "ERR-USR:02", MESSAGE : "INVALID MOBILE", PATH : "POST ./Contact" });
+      return Response.render('Contact', {
+        ContactString : `<p class="cst-FormLabel cst-FormNecessary">Mobile Number is Invalid</p>`,
+      });
+    }
+    else {
+      LOG.SECURITY ({ ERROR : "ERR-API:01", MESSAGE : "DATA MISSING", PATH : "POST ./Contact" });
+      return Response.status(403).render('Message', {
+        Title : `Forbidden`,
+        Message : `<h1>WELCOME & HELLO THERE WEB TRAVELERS!</h1><h3>You Successfully Came Nowhere</h3><h2>403 - Forbidden</h2>`,
+      });
+    }
+  }
 });
 /*- --------------------------------------------------------------------------------------------------- -*/
 App.post ('/Contact', async function ( Request , Response ) {
@@ -98,17 +122,11 @@ App.post ('/Contact', async function ( Request , Response ) {
   }
   const MailCheck = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9_-]+\.[a-zA-Z0-9._-]+$/;
   if( !(MailCheck.test(Email)) ) {
-    LOG.AUDIT ({ ERROR : "ERR-USR:01", MESSAGE : "INVALID EMAIL", PATH : "POST ./Contact" });
-    return Response.render('Contact', {
-      ContactString : `<p class="cst-FormLabel cst-FormNecessary">E-Mail Format is Invalid</p>`,
-    });
+    return Response.redirect('/Contact?STATUS=EMAIL');
   }
   const NumberCheck = /^(\+91\s?)?[6-9]\d{4}\s?\d{5}$/;
   if( !(NumberCheck.test(Mobile)) ) {
-    LOG.AUDIT ({ ERROR : "ERR-USR:02", MESSAGE : "INVALID MOBILE", PATH : "POST ./Contact" });
-    return Response.render('Contact', {
-      ContactString : `<p class="cst-FormLabel cst-FormNecessary">Mobile Number is Invalid</p>`,
-    });
+    return Response.redirect('/Contact?STATUS=MOBILE');
   }
 
   const ContactData = {
