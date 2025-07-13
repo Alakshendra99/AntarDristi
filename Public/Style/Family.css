@@ -67,6 +67,15 @@ body, html {
   align-items: center;
   text-align: center;
 }
+@media (max-width: 768px) {
+  .cst-FamilyImageBox { 
+    padding-bottom: 2vh;
+  }
+  .cst-FamilyImage {
+    width: 60vw;
+    height: 60vw;
+  }
+}
 .cst-FamilyInfoBox {
   padding: 0;
   border: 0;
