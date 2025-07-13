@@ -72,9 +72,8 @@ function ValuePrinter (Value, IndentLevel = 2) {
 function LogFormater (Log, Level, Colour) {
   // DEPLOYED MODE LOGS
   if (LOGGING_MODE === "DEPLOYED") {
-    const TimeStamp = DateInIST();
-    const LOG = JSON.stringify(Log);
-    return `\n${TimeStamp} ${Level} : ${LOG}`;
+    const LOG = JSON.stringify(Log).replace(/:/g, ' : ').replace(/,/g, ' , ').replace(/{/, '{ ').replace(/}/, ' }');
+    return `\n${Level} : ${LOG}`;
   } 
   
   // DEVELOPMENT MODE LOGS
@@ -96,6 +95,16 @@ function LogFormater (Log, Level, Colour) {
 
 /*- LOGGER FORMATER -*/
 /*- ==================================================================================================== -*/
+function LOG_START (MODE) {
+  if (MODE === "DEVELOPMENT") {
+    LOGGING_MODE = "DEVELOPMENT";
+  } else if (MODE === "DEPLOYED") {
+    LOGGING_MODE = "DEPLOYED";
+  } else {
+    LOGGING_MODE = "DEVELOPMENT";
+    LOG_CRITICAL ({ ERROR : "ERR-LOG:01", MESSAGE : "LOGGING MODE NOT DEFINED", PATH : "./" });
+  }
+}
 function LOG_VERBOSE (Message) {
   process.stdout.write(LogFormater(Message, "VERBOSE", LoggingColour.LEVEL.VERBOSE));
 }
@@ -132,12 +141,32 @@ function LOG_CRITICAL (Message) {
 function LOG_FATAL (Message) {
   process.stdout.write(LogFormater(Message, "FATAL", LoggingColour.LEVEL.FATAL));
 }
+function LOG_RAW (Message, Color = null) {
+  var LOG;
+  if (typeof Email !== 'object') {
+    LOG = String(Message);
+  } else {
+    LOG = JSON.stringify(Message).replace(/:/g, ' : ').replace(/,/g, ' , ').replace(/{/, '{ ').replace(/}/, ' }');
+  }
+
+  if ( !Color ) {
+    process.stdout.write(LOG);
+  } else {
+    const ColourCheck = /^#[A-Fa-f0-9]{6}$/;
+    if ( !ColourCheck.test(Color) ) {
+      LOG_CRITICAL ({ ERROR : "ERR-LOG:02", MESSAGE : "LOGGING COLOUR IS NOT CORRECT", PATH : "./" });
+    } else {
+      process.stdout.write(Chalk.hex(Color)(LOG));
+    }
+  }
+}
 /*- ==================================================================================================== -*/
 
 
 /*- LOGGER EXPORTER -*/
 /*- ==================================================================================================== -*/
 const LOGGERS = {
+  START : LOG_START,
   VERBOSE : LOG_VERBOSE,
   TRACE : LOG_TRACE,
   DEBUG : LOG_DEBUG,
@@ -150,6 +179,7 @@ const LOGGERS = {
   SECURITY : LOG_SECUIRITY,
   CRITICAL : LOG_CRITICAL,
   FATAL : LOG_FATAL,
+  RAW : LOG_RAW,
 };
 export default LOGGERS;
 /*- ==================================================================================================== -*/

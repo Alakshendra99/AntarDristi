@@ -5,8 +5,9 @@ import DB from "./Database/SCHEMA.js"
 
 const URL = "127.0.0.1";
 const PORT = 3030;
-const VERSION = "v1.2:3"
+const VERSION = "v1.2:4";
 
+LOG.START ("DEPLOYED");
 LOG.INFO ({ SERVER : "TANISHA DEBIAN SERVER (IN)", PROJECT : "ANTARDRISTI", AUTHOR : "ALAKSHENDRA SINGH", VERSION : VERSION });
 LOG.SYSTEM ({ MESSAGE : "SERVER STARTING", URL : URL, PORT : PORT });
 /*- ==================================================================================================== -*/
@@ -249,6 +250,7 @@ async function onExit () {
   await Delay(500);
   await MongoDB.Disconnect();
   LOG.SYSTEM ({ MESSAGE : "SERVER CLOSED!" });
+  LOG.RAW ('\n');
   process.exit(0);
 }
 
